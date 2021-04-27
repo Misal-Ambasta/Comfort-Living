@@ -6,19 +6,16 @@ Comfort living is an online shopping platform which is focusing on decoration of
 
 ## UI:
 ### Home page
-![](/public/myntra-clone.jpg)
+![](/public/resources/comfort-living.png)
 
-### Dashboard
-![](/resources/preview/dashboard.png)
+### Furniture
+![](/public/resources/furnitures.png)
 
-### Meditate
-![](/resources/preview/127.0.0.1_5500_meditate.html.png)
+### Lightings
+![](/public/resources/lightings.png)
 
-### Body
-![](/resources/preview/127.0.0.1_5500_body.html.png)
+### Accessories
+![](/public/resources/accessories.png)
 
-### Scenes
-![](/resources/preview/127.0.0.1_5500_scenes.html.png)
-
-### Profile
-![](/resources/preview/127.0.0.1_5500_profile.html.png)
+### Single 
+![](/public/resources/singleFurniture.png)
