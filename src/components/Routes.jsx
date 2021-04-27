@@ -1,19 +1,19 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
-import About from '../../../Routes/About';
-import Contact from '../../../Routes/Contact';
-import Furniture from '../../../Routes/Furniture';
-import Homepage from '../../../Routes/Homepage';
+import About from '../Routes/About';
+import Contact from '../Routes/Contact';
+import Furniture from '../Routes/Furniture';
+import Homepage from '../Routes/Homepage';
 import axios from 'axios';
-import Items from '../../../Routes/Items'
-import PrivateRoutes from '../Components/PrivateRoutes';
-import Login from '../Components/Login';
-import Cart from '../../../Routes/Cart';
+import Items from '../Routes/Items'
+import PrivateRoutes from './PrivateRoutes';
+import Login from './Login';
+import Cart from '../Routes/Cart';
 import {AuthContext} from "../Context/AuthContext"
-import Light from '../../../Routes/Light';
-import Accessories from '../../../Routes/Accessories';
-import Checkout from '../../../Routes/Checkout';
-
+import Light from '../Routes/Light';
+import Accessories from '../Routes/Accessories';
+import Checkout from '../Routes/Checkout';
+import FAQ from '../Routes/FAQ'
 
 export default class Routes extends React.Component {
  
@@ -23,7 +23,7 @@ export default class Routes extends React.Component {
 
         const {data, isAuth,id, flag, cartArr, handleCart, handlestore, handleSubmit} = this.context
        
-        console.log(this.context, "context");
+        //console.log(this.context, "context");
         return (
             <div>
                 <Switch>
@@ -38,8 +38,8 @@ export default class Routes extends React.Component {
                     <Route path="/accessories" render={(props)=><Accessories store={handlestore} data={data} {...props} />} />
                     <Route path="/about" render={()=><About />} />
                     <Route path="/contact" render={()=><Contact />} />
-                    <Route path="/faq" render={()=> <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem exercitationem provident veritatis a aliquam blanditiis deleniti eum nesciunt, sequi dolor alias corrupti laborum neque quam, est libero reprehenderit eligendi ratione ducimus! Ut, consequatur? Sequi magni accusantium obcaecati, unde, neque inventore nobis ratione expedita nulla rem temporibus necessitatibus eaque animi similique!</div>} />
-                    <Route path="/career" render={()=> <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem exercitationem provident veritatis a aliquam blanditiis deleniti eum nesciunt, sequi dolor alias corrupti laborum neque quam, est libero reprehenderit eligendi ratione ducimus! Ut, consequatur? Sequi magni accusantium obcaecati, unde, neque inventore nobis ratione expedita nulla rem temporibus necessitatibus eaque animi similique!</div>} />
+                    <Route path="/faq" render={()=> <FAQ />} />
+                    <Route path="/career" render={()=> <FAQ />} />
                     <Route path="/checkout" render={()=> <Checkout />} />
                 </Switch>
             </div>

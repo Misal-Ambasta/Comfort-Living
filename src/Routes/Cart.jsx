@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
 import {Link} from "react-router-dom";
-import {AuthContext} from "../components/coding-2/Context/AuthContext"
+import {AuthContext} from "../Context/AuthContext"
 
 
 export default class Cart extends React.Component {
@@ -11,21 +11,18 @@ export default class Cart extends React.Component {
      render(){
         const {cartItems,history,auth} = this.props
          const {decreaseQuantity,increaseQuantity,deleteItem,cartArr, handleCheckout} =  this.context       
-        console.log(cartItems, "cart")
+        //console.log(cartItems, "cart")
 
         let total = 0
-        cartItems.map(item=>{
-               
+        cartItems.map(item=>{         
                sum(item.price*item.quantity)
             })
        function  sum(x) {
-           
-           total +=Number(x)
-           
-       console.log(total);
+           total +=Number(x)   
+       //console.log(total);
        }
 
-    console.log(this.props, "cart");
+    //console.log(this.props, "cart");
 
     if(cartArr.length === 0 ){
         return (
@@ -46,10 +43,8 @@ export default class Cart extends React.Component {
 
         return (
             <div style={{height:"100vh"}}>
-            <h2 style={{paddingLeft:100}}>Cart</h2>
-                
+            <h2 style={{paddingLeft:100}}>Cart</h2>              
                 {cartItems.map(item => 
-
                     <div className="cartCard">
                         <img width="100px" src={item.picture}  alt={item.id}/>   
                         <h3 style={{marginTop:"30px"}}> {item.name} </h3>
@@ -61,7 +56,6 @@ export default class Cart extends React.Component {
                         <h2> ₹ {item.price*item.quantity} </h2>
                         <div id="delete" style={{width:40}} onClick={()=>deleteItem(item)}><i class="far fa-trash-alt"></i></div>
                     </div>
-
                 )}
                 <div className="checkout">
                     <Link to="/"><div><button>back</button></div></Link>

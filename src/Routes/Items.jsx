@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link, Redirect} from 'react-router-dom';
-import {AuthContext} from "../components/coding-2/Context/AuthContext";
+import {AuthContext} from "../Context/AuthContext";
 
 
 export default class Items extends React.Component{
@@ -15,7 +15,7 @@ export default class Items extends React.Component{
         
         const {handleCart,isAuth} = this.context;
         const {history} = this.props
-        console.log("item added");
+        //console.log("item added");
         // if(!auth){
 
         //     history.push("../login")
@@ -34,9 +34,9 @@ export default class Items extends React.Component{
    render(){
         const {match} = this.props
         const{data,handleCart} = this.context
-        console.log(data, "data", match);
+       // console.log(data, "data", match);
     const item = data.find(item => item.id === match.params.id)
-    console.log(item, "item-find")
+    //console.log(item, "item-find")
 
     if(!item){
         return <Link  to='/'><div style={{height:'100vh'}}> Go Back </div></Link>

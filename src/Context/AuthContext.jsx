@@ -20,40 +20,29 @@ class AuthContextProvider extends React.Component{
     }
     
     async componentDidMount(){
-        await axios.get('https://mod-living-db.herokuapp.com/allProducts').then(res=>this.setState({
+        await axios.get('https://comfort-living-db.herokuapp.com/allProducts').then(res=>this.setState({
             data:[...res.data]
         }))
-        // http://localhost:3000/allProducts
     }
 
      decreaseQuantity = (item) => {
-        
         const {cartArr} = this.state;
-
         let newQty = cartArr.filter(cartItem => cartItem.id == item.id)
 
         if(newQty[0].quantity > 0){
             newQty[0].quantity -= 1
-
             this.setState({
                 cartArr: cartArr.filter(cartItem => cartItem.id == item.id ? newQty : cartItem)
-            })
-           
+            })   
         }else{
             this.deleteItem(item)
         }
-
-
     }
 
     increaseQuantity = (item) => {
-
         const {cartArr} = this.state;
-
         let newQty = cartArr.filter(cartItem => cartItem.id == item.id)
-
         newQty[0].quantity += 1
-        
 
         this.setState({
             cartArr: cartArr.filter(cartItem => cartItem.id == item.id ? newQty : cartItem)
@@ -63,7 +52,6 @@ class AuthContextProvider extends React.Component{
 
     Signout =() => {
         const {isAuth}  = this.state
-
         this.setState({
             isAuth:false
         })
@@ -78,14 +66,13 @@ class AuthContextProvider extends React.Component{
             data: data.filter(x => x.id == item.id ? dataItem : x),
             cartArr: cartArr.filter(cartItem => cartItem.id != item.id)
         })
-
-        console.log(data,"data");
+        //console.log(data,"data");
     }
     
         
 
     handleSubmit=(email,password) => {
-        console.log("here11 context api call")
+        //console.log("here11 context api call")
         axios.post("https://reqres.in/api/login", {
             email : email,
             password: password
@@ -94,21 +81,18 @@ class AuthContextProvider extends React.Component{
                 isAuth: true
             })
             ).catch(err => console.log(err))
-
-
     }
 
     
    handlestore=(id1) => {
-    console.log(id1, "here id");
-
+    //console.log(id1, "here id");
        this.setState({
            id:id1
        })
    }
 
    handleCart= (item) => {
-       console.log("added");
+       //console.log("added");
        const {cartArr} = this.state
        let dataItem = cartArr.filter(cartItem => cartItem.id == item.id)
 
@@ -134,7 +118,7 @@ class AuthContextProvider extends React.Component{
     render(){
         const { data, isAuth, id, flag, cartArr, isCheckout } = this.state;
         const {handleCart,handleCheckout, handlestore,deleteItem,Signout,handlelogin, handleSubmit,decreaseQuantity, increaseQuantity} = this;
-        console.log(cartArr, "arr in context");
+        //console.log(cartArr, "arr in context");
         return(
         <AuthContext.Provider value={{data, flag, isCheckout, handleCheckout, isAuth,id, cartArr,Signout,handlelogin, handleCart,deleteItem, handlestore,decreaseQuantity,increaseQuantity, handleSubmit}}>
             {this.props.children}

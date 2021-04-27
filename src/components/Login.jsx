@@ -19,7 +19,7 @@ export default class Login extends Component {
     handleSubmit = (e) => {
         e.preventDefault()
         const {email, password} = this.state;
-        console.log("here")
+       // console.log("here")
         this.props.submit(email, password)
     }
     
@@ -27,11 +27,11 @@ export default class Login extends Component {
     render() {
         const {email, password} = this.state
         const {auth, handleSubmit,f_id,history, flag} = this.props
-        console.log(this.props,"login")
-        console.log(auth)
+        //console.log(this.props,"login")
+        //console.log(auth)
 
         if(auth && flag){
-            console.log("shopping")
+            //console.log("shopping")
             history.push("../shoppingcart")
         }else if(auth){
             history.push("/")

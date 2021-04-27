@@ -1,7 +1,7 @@
 import React from 'react';
 import Login from "./Login"
-import Items from "../../../Routes/Items";
-import Cart from "../../../Routes/Cart";
+import Items from "../Routes/Items";
+import Cart from "../Routes/Cart";
 import {Route, Redirect} from "react-router-dom";
 import {AuthContext} from "../Context/AuthContext"
 
@@ -11,9 +11,9 @@ export default class PrivateRoutes extends React.Component {
 
         const {isAuth,data,handleCart,cartArr} = this.context
 
-        console.log(this.props, "private" , isAuth);
+        //console.log(this.props, "private" , isAuth);
         if(!isAuth){
-            console.log("private-login")
+            //console.log("private-login")
             return <Redirect to="/login" />
         }
         // else{

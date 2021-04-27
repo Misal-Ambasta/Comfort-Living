@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from "react-router-dom";
 import {AuthContext} from '../Context/AuthContext';
 import styles from "./main.module.css"
-import "../../../App.css"
+import "../App.css"
 
 export default function TopNav() {
     
